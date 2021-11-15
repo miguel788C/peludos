@@ -1,0 +1,113 @@
+
+header label{
+	float: right;
+	margin: 10px;
+}
+.lbl-menu{
+    width: 15px;
+    height: 7.5px;
+    position: relative;
+    cursor: pointer;
+	transform: scale(1.2);
+}
+.lbl-menu #spn1,#spn2,#spn3{
+    position: absolute;
+    content: '';
+    background:#ffff;
+    width: 14px;
+    height: 2.5px;
+    border-radius: 1px;
+    transition: 0.3s;
+}
+#spn2{
+    top: 5px;
+}
+#spn3{
+    top: 10px;
+}
+#btn-menu{
+    display: none;
+}
+#btn-menu:checked ~ .lbl-menu #spn1{
+    transform: rotate(140deg);
+    top: 10px;
+}
+#btn-menu:checked ~ .lbl-menu #spn2{
+    opacity: 0;
+}
+#btn-menu:checked ~ .lbl-menu #spn3{
+    transform: rotate(-140deg);
+    top: 10px;
+}
+.menu{
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	background: hsla(273,91%,27%, 0.7);
+	transition: all 0.5s;
+	transform: translateX(+100%);
+}
+.menu a{
+	display:  block;
+	color: #fff;
+	height: 1px;
+	text-decoration:none;
+	padding: 24px;
+}
+
+.menu a:hover {
+  background-color: hsl(273, 91%, 45%,0.4);
+}
+.menu a span {
+	margin-top: 10px;
+}
+
+#btn-menu:checked ~ .menu{
+	transform: translateX(0%);
+}
+@media (min-width:1440px) {
+	.menu{
+		position: static;
+		width: auto;
+		height: auto;
+		transform: translateX(0%);
+		float: right;
+		display: flex;
+	}
+	.menu a{
+		border: none;
+		height: 50px;
+		padding: 28px;
+	}
+	.menu a:hover {
+		background-color: hsl(273, 91%, 45%,0.4);
+	}
+	header label{
+		display: none;
+	}
+}
+@media(min-width: 1024px){
+	.menu{
+		position: static;
+		width: auto;
+		height: auto;
+		transform: translateX(0%);
+		float: right;
+		display: flex;
+	}
+	.menu a:hover {
+		background-color: hsl(273, 91%, 45%,0.4);
+	}
+	header label{
+		display: none;
+	}
+}
+@media (max-width: 768px){
+	.menu a{
+	position: static;
+	color: #fff;
+	height: 1px;
+	text-decoration:none;
+	padding: 20px;
+}
